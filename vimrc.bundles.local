@@ -1,1 +1,6 @@
 Plugin 'GabrieleLippi/yarn-vim'
+Plugin 'posva/vim-vue'
+Plugin 'dracula/vim'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'udalov/kotlin-vim'
+Plugin 'Valloric/YouCompleteMe'
