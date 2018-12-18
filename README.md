@@ -26,6 +26,7 @@ peace-loving hippies. Built for Mac OS X.
 * `<C-]>` jump to definition using ctags
 * `,l` begins aligning lines on a string, usually used as `,l=` to align assignments
 * `<C-hjkl>` move between windows, shorthand for `<C-w> hjkl`
+* `,r` rename variable in buffer
 
 ### tmux
 
