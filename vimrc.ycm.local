@@ -1,2 +1,3 @@
 noremap <leader>r :YcmCompleter RefactorRename
 noremap <leader>df :YcmCompleter GoToDefinition
+noremap <leader>gr :YcmCompleter GoToReferences

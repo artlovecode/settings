@@ -31,3 +31,7 @@ silent! autocmd VimEnter * RemoveConflictingAlignMaps
 if filereadable("~/.vimrc.ymc.local")
   source ~/.vimrc.ycm.local
 endif
+
+if filereadable("~/.vimrc.ale.local")
+  source ~/.vimrc.ale.local
+endif

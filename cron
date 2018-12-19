@@ -1,4 +1,5 @@
 #!/bin/sh
+cd ~/maximum-awesome
 git add -A
 git commit -m "cron: update"
 git push
