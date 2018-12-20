@@ -16,9 +16,12 @@ module.exports = {
     "react"
   ],
   "rules": {
+    "no-console": [
+      "warn"
+    ],
     "indent": [
       "error",
-      2
+      4
     ],
     "linebreak-style": [
       "error",
