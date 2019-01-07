@@ -1,5 +1,8 @@
 #!/bin/sh
 cd ~/maximum-awesome
+
+brew bundle dump
+
 git add -A
 git commit -m "cron: update"
 git push
