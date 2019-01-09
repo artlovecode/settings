@@ -2,6 +2,7 @@
 cd ~/maximum-awesome
 
 brew bundle dump
+antigen snapshot
 
 git add -A
 git commit -m "cron: update"
