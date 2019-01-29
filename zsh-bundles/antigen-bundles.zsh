@@ -11,3 +11,4 @@ antigen bundle sindresorhus/pretty-time-zsh
 antigen bundle robertzk/send.zsh
 antigen bundle softmoth/zsh-vim-mode
 antigen bundle nviennot/zsh-vim-plugin
+antigen apply
