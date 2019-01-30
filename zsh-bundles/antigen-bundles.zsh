@@ -1,6 +1,5 @@
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle smallhadroncollider/antigen-git-rebase
-antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
 antigen bundle arzzen/calc.plugin.zsh
 antigen bundle adolfoabegg/browse-commit
 antigen bundle popstas/zsh-command-time
@@ -10,5 +9,4 @@ antigen bundle unixorn/git-extra-commands
 antigen bundle sindresorhus/pretty-time-zsh
 antigen bundle robertzk/send.zsh
 antigen bundle softmoth/zsh-vim-mode
-antigen bundle nviennot/zsh-vim-plugin
 antigen apply
