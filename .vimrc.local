@@ -8,9 +8,11 @@ inoremap jj <ESC>
 "nmap <leader>hl :let @/ = ""<CR>
 
 " gui settings
-if (&t_Co == 256 || has('gui_running'))
-    colorscheme dracula 
+if (&t_Co == 256 || has('gui_running') || has("termguicolors"))
+    set termguicolors
 endif
+
+colorscheme OceanicNext
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "
