@@ -12,8 +12,6 @@ if (&t_Co == 256 || has('gui_running') || has("termguicolors"))
     set termguicolors
 endif
 
-colorscheme OceanicNext
-
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "
 " This section is here to prevent AlignMaps from adding a bunch of mappings
@@ -36,3 +34,10 @@ endif
 
 
 let g:gitgutter_enabled = 1
+let g:airline_theme='oceanicnext'
+
+
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+
