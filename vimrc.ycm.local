@@ -1,3 +1,5 @@
+let g:ycm_autoclose_preview_window_after_completion=1
 noremap <leader>r :YcmCompleter RefactorRename
-noremap <leader>df :YcmCompleter GoToDefinition
 noremap <leader>gr :YcmCompleter GoToReferences
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
