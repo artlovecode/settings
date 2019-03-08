@@ -1,3 +1,3 @@
-let g:ale_linter_aliases = {'vue': 'typescript'}
-let g:ale_linters = {'vue': ['tsserver', 'tslint']}
-let g:ale_fixers = {'vue': ['tslint']}
+let g:ale_linter_aliases = ['javascript', 'vue']
+let g:ale_linters =  ['eslint']
+let g:ale_fixers = ['eslint']
