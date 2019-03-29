@@ -3,3 +3,11 @@ noremap <leader>r :YcmCompleter RefactorRename
 noremap <leader>gr :YcmCompleter GoToReferences
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration
 
+let venv_path = system('pipenv --venv')
+
+if v:shell_error == 0
+    let g:ycm_python_interpreter_path = substitute(venv_path, '\n', '', '') . '/bin/python'
+else
+    let g:ycm_python_binary_path= 'python'
+endif
+
