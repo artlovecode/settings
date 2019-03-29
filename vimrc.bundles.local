@@ -12,3 +12,5 @@ Plugin 'othree/html5.vim'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ruanyl/vim-fixmyjs'
+Plugin 'integralist/vim-mypy'
+
