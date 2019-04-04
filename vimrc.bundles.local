@@ -13,4 +13,4 @@ Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ruanyl/vim-fixmyjs'
 Plugin 'plytophogy/vim-virtualenv'
-
+Plugin 'MathSquared/vim-python-sql'
