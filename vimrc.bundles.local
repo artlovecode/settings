@@ -12,3 +12,4 @@ Plug 'leafgarland/typescript-vim'
 Plug 'rakr/vim-two-firewatch'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Valloric/YouCompleteMe', {'do': './install.py' }
+Plug 'tommcdo/vim-exchange'
