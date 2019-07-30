@@ -13,3 +13,5 @@ Plug 'rakr/vim-two-firewatch'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Valloric/YouCompleteMe', {'do': './install.py' }
 Plug 'tommcdo/vim-exchange'
+Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
