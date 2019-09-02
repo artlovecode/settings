@@ -15,3 +15,4 @@ Plug 'Valloric/YouCompleteMe', {'do': './install.py' }
 Plug 'tommcdo/vim-exchange'
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
+Plug 'jparise/vim-graphql'
