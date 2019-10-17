@@ -1,5 +1,5 @@
 let g:ale_linter_aliases = ['javascript', 'vue']
-let g:ale_linters =  ['eslint']
+let g:ale_linters =  { 'js': 'eslint', 'cs': 'OmniSharp' }
 let g:ale_fixers = ['eslint']
 set g:ale_python_auto_pipenv
 let g:ale_lint_on_text_changed = 0

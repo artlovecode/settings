@@ -32,6 +32,8 @@ let g:oceanic_next_terminal_italic = 1
 let g:airline_highlighting_cache=1
 colorscheme abstract
 
+let g:OmniSharp_server_stdio = 1
+
 let g:ale_fixers = ['eslint']
 let g:ale_fix_on_save = 1
 
