@@ -1,7 +1,0 @@
-let g:ycm_autoclose_preview_window_after_completion=1
-noremap <leader>r :YcmCompleter RefactorRename
-noremap <leader>gr :YcmCompleter GoToReferences
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration
-
-let g:python3_host_prog = "/usr/local/bin/python3"
-

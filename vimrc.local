@@ -28,10 +28,20 @@ endfunction
 command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
 silent! autocmd VimEnter * RemoveConflictingAlignMaps
 
-if filereadable("~/.vimrc.ymc.local")
-  source ~/.vimrc.ycm.local
-endif
 
-if filereadable("~/.vimrc.ale.local")
-  source ~/.vimrc.ale.local
-endif
+let g:ycm_autoclose_preview_window_after_completion=1
+noremap <leader>r :YcmCompleter RefactorRename
+noremap <leader>gr :YcmCompleter GoToReferences
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration
+
+
+let g:ale_linter_aliases = ['javascript', 'vue']
+let g:ale_linters =  { 'js': 'eslint', 'cs': 'OmniSharp' }
+let g:ale_fixers = ['eslint']
+set g:ale_python_auto_pipenv
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+
+let g:python3_host_prog = "/usr/local/bin/python3"
+
