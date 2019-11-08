@@ -1,1 +1,2 @@
-nmap <leader>r viw <bar> :YcmCompleter RefactorRename
+map <leader>r viw :YcmCompleter RefactorRename
+
