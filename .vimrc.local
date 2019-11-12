@@ -38,7 +38,11 @@ let g:ale_fixers = ['eslint']
 let g:ale_linters = {
 \ 'cs': ['OmniSharp']
 \}
+
 let g:ale_fix_on_save = 1
+let g:deoplete#enable_at_startup = 1
+let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
+
 
 noremap <Leader>f :Fixmyjs<CR>
 noremap <Leader>p :ALEFix<CR>
