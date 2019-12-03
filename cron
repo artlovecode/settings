@@ -1,6 +1,7 @@
 #!/bin/sh
 cd ~/maximum-awesome
 
+rm -rf Brewfile
 brew bundle dump
 antigen snapshot
 
