@@ -3,10 +3,11 @@ FROM ubuntu:latest
 COPY . /restore
 WORKDIR /restore
 
-RUN apt-get install curl
-RUN apt-get install ruby
+RUN apt --yes update && apt --yes upgrade
+RUN apt --yes install curl
+RUN apt --yes install ruby
 
-RUN wget https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh
+RUN curl -o install.sh https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh
 RUN chmod +x ./install.sh
 RUN ./install.sh
 
