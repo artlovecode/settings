@@ -6,7 +6,6 @@ Plug 'prettier/vim-prettier', {'for': 'javascript'}
 Plug 'mhartington/oceanic-next'
 Plug 'othree/html5.vim', {'for': 'html'}
 Plug 'junegunn/gv.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'jdsimcoe/abstract.vim'
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'rakr/vim-two-firewatch'
@@ -19,6 +18,5 @@ Plug 'jparise/vim-graphql'
 Plug 'rking/ag.vim'
 Plug 'OmniSharp/omnisharp-vim', {'for': 'csharp'}
 Plug 'tpope/vim-dispatch'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
