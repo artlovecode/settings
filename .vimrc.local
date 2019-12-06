@@ -17,8 +17,8 @@ endfunction
 command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
 silent! autocmd VimEnter * RemoveConflictingAlignMaps
 
-if filereadable(expand("~/.vimrc.ycm.local"))
-  source ~/.vimrc.ycm.local
+if filereadable(expand("~/.vimrc.coc.local"))
+  source ~/.vimrc.coc.local
 endif
 
 

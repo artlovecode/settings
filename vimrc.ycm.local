@@ -1,2 +1,1 @@
-map <leader>r viw :YcmCompleter RefactorRename
 
