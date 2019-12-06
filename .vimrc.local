@@ -44,6 +44,4 @@ let g:ale_fix_on_save = 1
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
 
 
-noremap <Leader>f :Fixmyjs<CR>
-noremap <Leader>p :ALEFix<CR>
-
+noremap <Leader>f :ALEFix<CR>
