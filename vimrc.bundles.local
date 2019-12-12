@@ -20,3 +20,4 @@ Plug 'OmniSharp/omnisharp-vim', {'for': 'csharp'}
 Plug 'tpope/vim-dispatch'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
+Plug 'jiangmiao/auto-pairs'
