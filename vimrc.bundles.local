@@ -21,3 +21,4 @@ Plug 'tpope/vim-dispatch'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'jiangmiao/auto-pairs'
+Plug 'fugalh/desert.vim'
