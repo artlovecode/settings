@@ -7,17 +7,42 @@ syntax enable
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
 
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 " install Vundle bundles
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-  source ~/.vimrc.bundles.local
-endif
+Plug 'posva/vim-vue', {'for': 'vue'}
+Plug 'w0rp/ale'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree'
+Plug 'prettier/vim-prettier', {'for': 'javascript'}
+Plug 'mhartington/oceanic-next'
+Plug 'othree/html5.vim', {'for': 'html'}
+Plug 'junegunn/gv.vim'
+Plug 'jdsimcoe/abstract.vim'
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+Plug 'rakr/vim-two-firewatch'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'Valloric/YouCompleteMe', {'do', './install.py' }
+Plug 'tommcdo/vim-exchange'
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'godlygeek/tabular'
+Plug 'jparise/vim-graphql'
+Plug 'rking/ag.vim'
+Plug 'OmniSharp/omnisharp-vim', {'for': 'csharp'}
+Plug 'tpope/vim-dispatch'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'fugalh/desert.vim'
 
 call plug#end()
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
+
+autocmd BufEnter * lcd %:p:h
+
+colorscheme abstract
 
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
