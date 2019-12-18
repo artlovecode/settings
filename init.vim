@@ -11,6 +11,7 @@ call plug#begin(stdpath('data') . '/plugged')
 " install Vundle bundles
 Plug 'posva/vim-vue', {'for': 'vue'}
 Plug 'w0rp/ale'
+Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdtree'
