@@ -73,6 +73,9 @@ set wildmode=longest,list,full
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
 
+let b:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
+let b:ale_fix_on_save = 1
+
 " keyboard shortcuts
 let mapleader = ','
 noremap <C-h> <C-w>h
@@ -89,6 +92,7 @@ nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
+noremap <leader>p :ALEFix<CR>
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " in case you forgot to sudo
