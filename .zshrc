@@ -82,6 +82,10 @@ export NODE_EXTRA_CA_CERTS=~/storebrand-internal-ca.pem
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
+
+
+alias vim="nvim"
+alias jcode="/mnt/c/Users/cqi/code"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
@@ -101,6 +105,9 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$HOME/neovim/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="/mnt/c/Users/cqi/Downloads/openjdk-11/jdk-11/bin:$PATH"
+export JAVA_HOME="/home/linuxbrew/.linuxbrew/opt/openjdk@11"
 
 export FZF_DEFAULT_COMMAND="rg --files --hidden"
 
@@ -110,6 +117,18 @@ fe() {
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fh() {
+  eval $( ([ -n "$ZSH_NAME"  ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g' )
+}
+
+
 alias ezsh="vim ~/.zshrc"
 alias evim="vim ~/.config/nvim/init.vim"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/home/linuxbrew/.linuxbrew/opt/openjdk@11/bin:$PATH"
+export DOCKER_HOST=tcp://localhost:2375
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -4,7 +4,6 @@ set nocompatible
 " enable syntax highlighting
 syntax enable
 
-filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
 set hidden
 
@@ -21,7 +20,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
-Plug 'prettier/vim-prettier', {'for': 'javascript'}
+Plug 'prettier/vim-prettier', {'for': ['typescript', 'javascript', 'typescriptreact', 'javascriptreact']}
 Plug 'mhartington/oceanic-next'
 Plug 'othree/html5.vim', {'for': 'html'}
 Plug 'junegunn/gv.vim'
@@ -33,7 +32,7 @@ Plug 'tommcdo/vim-exchange'
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'godlygeek/tabular'
 Plug 'jparise/vim-graphql'
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'OmniSharp/omnisharp-vim', {'for': 'csharp'}
 Plug 'tpope/vim-dispatch'
 Plug 'editorconfig/editorconfig-vim'
@@ -41,36 +40,95 @@ Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'fugalh/desert.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
+Plug 'airblade/vim-rooter'
+Plug 'Shougo/echodoc.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'MaxMEllon/vim-jsx-pretty', {'for':['javascriptreact', 'typescriptreact']}
+Plug 'styled-components/vim-styled-components', {'for': ['javascriptreact', 'typescriptreact'], 'branch': 'main'}
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'mikelue/vim-maven-plugin', { 'for': ['java', 'kotlin'] }
+
+
+Plug 'ryanoasis/vim-devicons' " Always load this last, otherwise it breaks
 
 call plug#end()
 
-" ensure ftdetect et al work by including this after the Vundle stuff
+au VimEnter *  NERDTree
+au VimEnter * wincmd p
+
+map z/ <Plug>(incsearch-easymotion-/)
+map z? <Plug>(incsearch-easymotion-?)
+map zg/ <Plug>(incsearch-easymotion-stay)
+
+
+
+
+let g:rooter_change_directory_for_non_project_files = 'current'
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+
+"  ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+noremap <leader>fw :Ack<CR>
+
+let g:rooter_patterns = ['package.json', 'Makefile', 'Dockerfile', '.git/']
 
 autocmd BufEnter * lcd %:p:h"k
 autocmd BufNewfile,BufRead,BufReadPost *.jsx set filetype=javascriptreact
 autocmd BufNewfile,BufRead,BufReadPost *.tsx set filetype=typescriptreact
 
-autocmd BufNewfile,BufRead,BufReadPost *.jsx set syntax=javascriptreact
-autocmd BufNewfile,BufRead,BufReadPost *.tsx set syntax=typescript
-colorscheme abstract
+colorscheme OceanicNext
 
-set autoindent
-set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
+setlocal autoindent
+setlocal cindent
+setlocal smartindent
+set expandtab 
+set shiftwidth=2
+set guifont=Hack\ Nerd\ Font\ Mono\ 11
+set cmdheight=2
+set autoread                                                 " reload files when changed on disk, i.e. via `git checkcut`
 set backspace=2                                              " Fix broken backspace in some setups
 set backupcopy=yes                                           " see :help crontab
 set clipboard=unnamed                                        " yank and paste with the system clipboard
 set directory-=.                                             " don't store swapfiles in the current directory
 set encoding=utf-8
-set expandtab                                                " expand tabs to spaces
 set ignorecase                                               " case-insensitive search
 set incsearch                                                " search as you type
 set laststatus=2                                             " always show statusline
 set list                                                     " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
 set number                                                   " show line numbers
+set relativenumber
 set ruler                                                    " show where you are
 set scrolloff=3                                              " show context above/below cursorline
 set shiftwidth=2                                             " normal mode indentation commands use 2 spaces
@@ -85,8 +143,7 @@ set wildmode=longest,list,full
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
 
-let b:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'], 'javascriptreact': ['prettier', 'eslint'], 'typescriptreact': ['prettier', 'eslint'] }
-let b:ale_fix_on_save = 0
+let b:ale_fixers = {'javascript': ['prettier'], 'typescript': ['prettier'], 'javascriptreact': ['prettier'], 'typescriptreact': ['prettier'] }
 
 " keyboard shortcuts
 let mapleader = ','
@@ -106,7 +163,7 @@ nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
-noremap <leader>p :ALEFix<CR>
+noremap <leader>P :ALEFix<CR>
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " in case you forgot to sudo
@@ -287,3 +344,8 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+let g:exec_lua="lua"
+
+let g:echodoc_enable_at_startup = 1
+set ffs=unix " disable "file format = dos" detection"
