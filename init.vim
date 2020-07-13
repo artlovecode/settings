@@ -25,35 +25,34 @@ Plug 'mhartington/oceanic-next'
 Plug 'othree/html5.vim', {'for': 'html'}
 Plug 'junegunn/gv.vim'
 Plug 'jdsimcoe/abstract.vim'
-Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'typescriptreact']}
 Plug 'rakr/vim-two-firewatch'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tommcdo/vim-exchange'
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'godlygeek/tabular'
-Plug 'jparise/vim-graphql'
-Plug 'mileszs/ack.vim'
-Plug 'OmniSharp/omnisharp-vim', {'for': 'csharp'}
+Plug 'jparise/vim-graphql', {'for': 'grahpql'}
 Plug 'tpope/vim-dispatch'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
-Plug 'jiangmiao/auto-pairs'
 Plug 'fugalh/desert.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-rooter'
 Plug 'Shougo/echodoc.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'MaxMEllon/vim-jsx-pretty', {'for':['javascriptreact', 'typescriptreact']}
 Plug 'styled-components/vim-styled-components', {'for': ['javascriptreact', 'typescriptreact'], 'branch': 'main'}
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mikelue/vim-maven-plugin', { 'for': ['java', 'kotlin'] }
-
+Plug 'tjammer/focusedpanic.vim'
+Plug 'jdsimcoe/panic.vim'
+Plug 'rodnaph/vim-color-schemes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/molokai'
+Plug 'ap/vim-css-color'
 
 Plug 'ryanoasis/vim-devicons' " Always load this last, otherwise it breaks
 
@@ -65,8 +64,6 @@ au VimEnter * wincmd p
 map z/ <Plug>(incsearch-easymotion-/)
 map z? <Plug>(incsearch-easymotion-?)
 map zg/ <Plug>(incsearch-easymotion-stay)
-
-
 
 
 let g:rooter_change_directory_for_non_project_files = 'current'
@@ -87,10 +84,6 @@ function! s:denite_my_settings() abort
   \ denite#do_map('toggle_select').'j'
 endfunction
 
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
 
 "  ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
@@ -104,10 +97,10 @@ noremap <leader>fw :Ack<CR>
 let g:rooter_patterns = ['package.json', 'Makefile', 'Dockerfile', '.git/']
 
 autocmd BufEnter * lcd %:p:h"k
-autocmd BufNewfile,BufRead,BufReadPost *.jsx set filetype=javascriptreact
-autocmd BufNewfile,BufRead,BufReadPost *.tsx set filetype=typescriptreact
+" autocmd BufNewfile,BufRead,BufReadPost *.jsx set filetype=javascriptreact
+" autocmd BufNewfile,BufRead,BufReadPost *.tsx set filetype=typescriptreact
 
-colorscheme OceanicNext
+colorscheme panic
 
 setlocal autoindent
 setlocal cindent
@@ -172,7 +165,6 @@ cnoremap w!! %!sudo tee > /dev/null %
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:NERDSpaceDelims=1
-let g:gitgutter_enabled = 0
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -190,6 +182,8 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.md set spell
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
+
+autocmd VimEnter * wincmd p
 
 " Fix Cursor in TMUX
 if exists('$TMUX')
@@ -234,6 +228,19 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -349,3 +356,12 @@ let g:exec_lua="lua"
 
 let g:echodoc_enable_at_startup = 1
 set ffs=unix " disable "file format = dos" detection"
+
+set termguicolors
+
+set hlsearch
+hi Quote ctermbg=LightYellow guifg=LightYellow
+hi Visual  guifg=#000000 guibg=#FFFFFF gui=none
+
+let g:monokai_term_italic = 1
+let g:monokai_gui_italic = 1

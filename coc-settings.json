@@ -1,0 +1,6 @@
+{
+  "preferences": {
+    "echodocSupport": true,
+  },
+  "npm.binPath": "npm --registry=https://registry.npmjs.org"
+}
