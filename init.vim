@@ -8,51 +8,68 @@ filetype off
 set hidden
 
 call plug#begin()
-" install Vundle bundles
-Plug 'posva/vim-vue', {'for': 'vue'}
-Plug 'w0rp/ale'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
+
+" Text operations
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
-Plug 'prettier/vim-prettier', {'for': ['typescript', 'javascript', 'typescriptreact', 'javascriptreact']}
-Plug 'mhartington/oceanic-next'
-Plug 'othree/html5.vim', {'for': 'html'}
-Plug 'junegunn/gv.vim'
-Plug 'jdsimcoe/abstract.vim'
-Plug 'rakr/vim-two-firewatch'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tommcdo/vim-exchange'
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'godlygeek/tabular'
-Plug 'jparise/vim-graphql', {'for': 'grahpql'}
-Plug 'tpope/vim-dispatch'
-Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
-Plug 'fugalh/desert.vim'
-Plug 'pangloss/vim-javascript'
-" Plug 'majutsushi/tagbar'
-Plug 'airblade/vim-rooter'
-Plug 'Shougo/echodoc.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'justinmk/vim-sneak'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'styled-components/vim-styled-components', {'for': ['javascriptreact', 'typescriptreact'], 'branch': 'main'}
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
+
+" VCS
 Plug 'tpope/vim-fugitive'
 Plug 'mikelue/vim-maven-plugin', { 'for': ['java', 'kotlin'] }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'junegunn/gv.vim'
+
+" File system navigation
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+
+" In-file navigation
+Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+
+" Syntax
+Plug 'posva/vim-vue',                           { 'for': 'vue'}
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'styled-components/vim-styled-components', { 'for': ['javascriptreact', 'typescriptreact'], 'branch': 'main'}
+Plug 'plasticboy/vim-markdown',                 { 'for': 'markdown'}
+Plug 'jparise/vim-graphql',                     { 'for': 'grahpql'}
+Plug 'udalov/kotlin-vim',                       { 'for': 'kotlin'}
+Plug 'othree/html5.vim',                        { 'for': 'html'}
+Plug 'pangloss/vim-javascript'
+
+" Themes
+Plug 'fatih/molokai'
 Plug 'tjammer/focusedpanic.vim'
 Plug 'jdsimcoe/panic.vim'
+Plug 'jdsimcoe/abstract.vim'
+Plug 'rakr/vim-two-firewatch'
 Plug 'rodnaph/vim-color-schemes'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'fatih/molokai'
+Plug 'fugalh/desert.vim'
+Plug 'mhartington/oceanic-next'
+
+" Autcompleters, fixers, linters, compilers
+Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim',     { 'branch': 'release'}
+Plug 'Shougo/denite.nvim',    { 'do': ':UpdateRemotePlugins' }
+Plug 'prettier/vim-prettier', { 'for': ['typescript', 'javascript', 'typescriptreact', 'javascriptreact']}
+
+" VIM UI
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+
+" Misc
+Plug 'tpope/vim-dispatch'
+Plug 'airblade/vim-rooter'
+Plug 'Shougo/echodoc.vim'
 Plug 'ap/vim-css-color'
+
 
 Plug 'ryanoasis/vim-devicons' " Always load this last, otherwise it breaks
 
