@@ -35,29 +35,30 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 
 " Syntax
-Plug 'posva/vim-vue',                           { 'for': 'vue'}
+" Plug 'posva/vim-vue',                           { 'for': 'vue'}
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'styled-components/vim-styled-components', { 'for': ['javascriptreact', 'typescriptreact'], 'branch': 'main'}
-Plug 'plasticboy/vim-markdown',                 { 'for': 'markdown'}
-Plug 'jparise/vim-graphql',                     { 'for': 'grahpql'}
-Plug 'udalov/kotlin-vim',                       { 'for': 'kotlin'}
-Plug 'othree/html5.vim',                        { 'for': 'html'}
+" Plug 'plasticboy/vim-markdown',                 { 'for': 'markdown'}
+" Plug 'jparise/vim-graphql',                     { 'for': 'grahpql'}
+" Plug 'udalov/kotlin-vim',                       { 'for': 'kotlin'}
+" Plug 'othree/html5.vim',                        { 'for': 'html'}
 Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
 
 " Themes
-Plug 'fatih/molokai'
-Plug 'tjammer/focusedpanic.vim'
+" Plug 'fatih/molokai'
+" Plug 'tjammer/focusedpanic.vim'
 Plug 'jdsimcoe/panic.vim'
-Plug 'jdsimcoe/abstract.vim'
-Plug 'rakr/vim-two-firewatch'
-Plug 'rodnaph/vim-color-schemes'
-Plug 'fugalh/desert.vim'
-Plug 'mhartington/oceanic-next'
+" Plug 'jdsimcoe/abstract.vim'
+" Plug 'rakr/vim-two-firewatch'
+" Plug 'rodnaph/vim-color-schemes'
+" Plug 'fugalh/desert.vim'
+" Plug 'mhartington/oceanic-next'
 
 " Autcompleters, fixers, linters, compilers
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim',     { 'branch': 'release'}
-Plug 'Shougo/denite.nvim',    { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/denite.nvim',    { 'do': ':UpdateRemotePlugins' }
 Plug 'prettier/vim-prettier', { 'for': ['typescript', 'javascript', 'typescriptreact', 'javascriptreact']}
 
 " VIM UI
@@ -69,7 +70,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'airblade/vim-rooter'
 Plug 'Shougo/echodoc.vim'
 Plug 'ap/vim-css-color'
-
+Plug 'kristijanhusak/vim-carbon-now-sh'
 
 Plug 'ryanoasis/vim-devicons' " Always load this last, otherwise it breaks
 

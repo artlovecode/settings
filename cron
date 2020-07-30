@@ -1,8 +1,9 @@
 #!/bin/sh
-cd ~/maximum-awesome
+cd ~/settings
 
 rm -rf Brewfile
 brew bundle dump
+brew cask bundle dump
 antigen snapshot
 
 git add -A
